@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+
+		<meta charset="utf-8">
+		<title>  </title>
+
+		<style type="text/css">
+		</style>
+
+	</head>
+
+	<body>
+		
+		<form>
+			<input type="text" id="display" />
+			<div>
+				<input type="button" value="" onclick="clickedButton('')" />
+				<input type="button" value="CE" onclick="clickedButton('CE')" />
+				<input type="button" value="C" onclick="clickedButton('C')" />
+				<input type="button" value="/" onclick="clickedButton('/')" />
+			</div>
+			<div>
+				<input type="button" value="7" onclick="clickedButton('7')" />
+				<input type="button" value="8" onclick="clickedButton('8')" />
+				<input type="button" value="9" onclick="clickedButton('9')" />
+				<input type="button" value="*" onclick="clickedButton('*')" />
+			</div>
+			<div>
+				<input type="button" value="4" onclick="clickedButton('4')" />
+				<input type="button" value="5" onclick="clickedButton('5')" />
+				<input type="button" value="6" onclick="clickedButton('6')" />
+				<input type="button" value="-" onclick="clickedButton('-')" />
+			</div>
+			<div>
+				<input type="button" value="1" onclick="clickedButton('1')" />
+				<input type="button" value="2" onclick="clickedButton('2')" />
+				<input type="button" value="3" onclick="clickedButton('3')" />
+				<input type="button" value="+" onclick="clickedButton('+')" />
+			</div>
+			<div>
+				<input type="button" value="0" onclick="clickedButton('0')" />
+				<input type="button" value="." onclick="clickedButton('.')" />
+				<input type="button" value="sqrt" onclick="clickedButton('sqrt')" />
+				<input type="button" value="=" onclick="clickedButton('=')" />
+			</div>
+		</form>
+	
+	</body>
+
+	<script type="text/javascript">
+		
+		var showDisplay = document.getElementById("display");
+		// need to create blank variables that will store the varibles on the display
+		var operationType = "";
+
+		function clickedButton(clickedValue) {
+			switch(clickedValue) {
+				//need to declare what operation type before can do equals and calculate
+				// case '/':
+				// 	break;
+				// case '*':
+				// 	break;
+				// case '-':
+				// 	break;
+				// case '+':
+				// 	break;
+				// //once have operation type 
+				// case '=':
+				// 	break;
+				// case 'sqrt':
+				// 	break;
+				case 'C':
+					showDisplay.value = "";
+					break;
+				default:
+					if (clickedValue != '='){
+						showDisplay.value += clickedValue;
+					}
+					break;
+			}
+		}
+
+		function calculate(num1, num2, operation) {
+			switch(operation) {
+				case '/':
+					return Number(num1) / Number(num2);
+				case '*':
+					return Number(num1) * Number(num2);
+				case '-':
+					return Number(num1) - Number(num2);
+				case '+':
+					return Number(num1) + Number(num2);
+				default:
+					break;
+			}
+		}
+
+	</script>
+
+</html>
